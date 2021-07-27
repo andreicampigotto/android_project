@@ -7,7 +7,7 @@ class Veiculo (
     constructor() : this("", "")
 
     fun verificaMotor() : Boolean  {
-        return motor.length >= 2 && motor.isNotEmpty()
+        return motor.isNotEmpty() && motor.length >= 2
     }
 
     fun verificaCombustivel(){
