@@ -13,7 +13,7 @@ class Activity2 : AppCompatActivity() {
 
         Pessoa(nome = "Andrei", eMail = "andrei@gmail.com").apply {
             validaEMail(eMail)
-            concatenaNome("${nome}").let {
+            concatenaNome("$nome").let {
                 println(it)
             }
         }
