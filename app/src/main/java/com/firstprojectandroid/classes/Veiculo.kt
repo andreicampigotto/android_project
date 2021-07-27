@@ -8,4 +8,8 @@ class Veiculo (
     fun verificaMotor() {
         println(motor)
     }
+
+    fun verificaCombustivel(){
+        println(combustivel)
+    }
 }

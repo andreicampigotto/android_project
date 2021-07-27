@@ -10,8 +10,13 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val veiculo = Veiculo( "v6", "Alcool")
+        //val veiculo = Veiculo( "v6", "Alcool")
 
-        veiculo.verificaMotor()
+        //veiculo.verificaMotor()
+
+        Veiculo(combustivel = "Etanol", motor = "V8T").apply {
+            verificaMotor()
+            verificaCombustivel()
+        }
     }
 }
