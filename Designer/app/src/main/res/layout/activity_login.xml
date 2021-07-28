@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".ui.Login">
 
 
     <ImageView
@@ -13,34 +13,37 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:layout_weight="0"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="20dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_margin="20dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageAvatar">
 
         <EditText
+            android:id="@+id/NameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name" />
 
         <EditText
+            android:id="@+id/eMailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="E-Mail" />
 
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password" />
@@ -48,7 +51,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveButton"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginBottom="27dp"
