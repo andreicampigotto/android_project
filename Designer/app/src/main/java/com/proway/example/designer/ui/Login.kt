@@ -1,5 +1,6 @@
 package com.proway.example.designer.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -41,11 +42,16 @@ class Login : AppCompatActivity() {
         }
 
         if (form.checkAll()) {
-            Snackbar.make(
-                view,
-                "${form.name} - ${form.eMail} - ${form.password}",
-                Snackbar.LENGTH_LONG
-            ).show()
+
+            val intent = Intent(this, ActivityAplication::class.java)
+
+            startActivity(intent)
+
+//            Snackbar.make(
+//                view,
+//                "${form.name} - ${form.eMail} - ${form.password}",
+//                Snackbar.LENGTH_LONG
+//            ).show()
         }
         else{
 
