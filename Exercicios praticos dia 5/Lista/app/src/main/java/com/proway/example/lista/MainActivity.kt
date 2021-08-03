@@ -35,6 +35,19 @@ class MainActivity : AppCompatActivity(), ClickableItem {
         carRecyclerView.adapter = adapter
     }
 
+    fun onClickAddNewCar() {
+        if (carRecyclerView.adapter is AdapterRecyclerView) {
+            (carRecyclerView.adapter as AdapterRecyclerView).add(
+                Car(
+                    "Jeep",
+                    "Renegade",
+                    2021,
+                    CarLogoUrl.JEEP
+                )
+            )
+        }
+    }
+
     override fun onDelete(car: Car) {
         if(carRecyclerView.adapter is AdapterRecyclerView){
             (carRecyclerView.adapter as AdapterRecyclerView).removeAt(car)

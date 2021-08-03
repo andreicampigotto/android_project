@@ -3,6 +3,7 @@ package com.proway.example.lista.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,8 +24,13 @@ class AdapterRecyclerView(
     override fun onBindViewHolder(viewHolder: ItemCarViewHolder, position: Int) {
         listOfCars[position].apply {
             viewHolder.bind(this)
-            viewHolder.itemView.setOnClickListener{
+            viewHolder.itemView.setOnClickListener {
                 onClickable.onEdit(this)
+            }
+            viewHolder.itemView.findViewById<Button>(R.id.buttonDelete).let {
+                it.setOnClickListener {
+                    onClickable.onDelete(this)
+                }
             }
         }
     }
