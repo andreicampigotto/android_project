@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity(), Callback<List<Marca>> {
 
         val service = RetrofitBuilder.getServiceCarInstance()
         val call = service.getMarcas()
+
+        loadComponent()
+
         call.enqueue(this)
     }
 
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity(), Callback<List<Marca>> {
     override fun onResponse(call: retrofit2.Call<List<Marca>>, response: Response<List<Marca>>) {
         progressBar.visibility = View.GONE
         response.body()?.apply {
-            adapterMarcas.update()
+            adapterMarcas.update(this)
         }
 
     }

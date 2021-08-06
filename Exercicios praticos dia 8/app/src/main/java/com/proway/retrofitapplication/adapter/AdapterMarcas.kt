@@ -1,5 +1,6 @@
 package com.proway.retrofitapplication.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -7,16 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.proway.retrofitapplication.R
 import com.proway.retrofitapplication.model.Marca
 
-class AdapterMarcas(
+class AdapterMarcas: RecyclerView.Adapter<ViewHolderItemMarca>() {
 
-    val listOfMarcas: MutableList<Marca>
 
-) : RecyclerView.Adapter<ViewHolderItemMarca>() {
 
     private var listOfBrands: MutableList<Marca> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderItemMarca {
-        TODO("Not yet implemented")
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_marca, parent, false)
+        return ViewHolderItemMarca(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolderItemMarca, position: Int) {
