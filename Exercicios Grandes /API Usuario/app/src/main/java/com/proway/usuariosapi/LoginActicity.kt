@@ -1,5 +1,8 @@
 package com.proway.usuariosapi
 
-class LoginActicity {
+
+class LoginActicity(
+
+) {
 
 }

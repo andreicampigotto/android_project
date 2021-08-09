@@ -12,5 +12,8 @@ object RetrofitBuilder {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    fun getAuthenticationService(): Authenticaton{
+        return retrofit.create(Authenticaton::class.java)
+    }
 }
 
