@@ -8,4 +8,11 @@ data class User(
     val address: Address,
     val phone : String
 ) {
+    fun checkUserName(): Boolean{
+        return !username.isNullOrEmpty()
+    }
+
+    fun checkPassword(): Boolean{
+        return !password.isNullOrEmpty()
+    }
 }
