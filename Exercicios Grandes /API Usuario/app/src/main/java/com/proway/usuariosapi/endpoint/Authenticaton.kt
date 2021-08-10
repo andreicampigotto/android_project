@@ -19,5 +19,5 @@ interface Authenticaton {
 
     //Aqui é onde autentica
     @POST("/auth/login")
-    fun login(@Body credentials: Credentials): Call<Auth>
+    fun login(@Body credentials: com.proway.usuariosapi.model.Credentials): Call<Auth>
 }

@@ -9,5 +9,12 @@ data class Credentials(
 
     val password: String
 ) {
+    fun checkUsername(): Boolean{
+        return !username.isNullOrEmpty()
+    }
+
+    fun checkPassword(): Boolean{
+        return !password.isNullOrEmpty()
+    }
 
 }
