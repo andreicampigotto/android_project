@@ -48,8 +48,7 @@ class LoginActicity: AppCompatActivity(), Callback<Auth>{
 
     private fun dispararRequestLogin(credentials: Credentials){
         val interfaceDeAuthImplementada = RetrofitBuilder.getAuthenticationService()
-        val call = interfaceDeAuthImplementada.login(
-            credentials)
+        val call = interfaceDeAuthImplementada.login(credentials)
         call.clone().enqueue(this)
     }
 
