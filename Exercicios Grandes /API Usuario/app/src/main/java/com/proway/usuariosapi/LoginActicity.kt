@@ -1,5 +1,6 @@
 package com.proway.usuariosapi
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -7,6 +8,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.proway.usuariosapi.endpoint.RetrofitBuilder
 import com.proway.usuariosapi.model.Auth
 import com.proway.usuariosapi.model.Credentials
+import com.proway.usuariosapi.utils.snackBar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,7 +42,7 @@ class LoginActicity: AppCompatActivity(), Callback<Auth>{
         if (credentials.checkUsername() && credentials.checkPassword())
             dispararRequestLogin(credentials)
         else
-            snackBar()
+            snackBar(inputLogin, R.string.usuario_invalido)
 
     }
 
@@ -57,10 +59,24 @@ class LoginActicity: AppCompatActivity(), Callback<Auth>{
     }
 
     override fun onResponse(call: Call<Auth>, response: Response<Auth>) {
-        TODO("Not yet implemented")
+        if (response.body()!= null){
+            println("ERRO 1")
+            val loginResponse = response.body()!!
+            if (loginResponse.isError()) {
+                println("ERRO 2")
+                snackBar(inputLogin, R.string.usuario_invalido)
+            } else {
+                Intent(this, MainActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
+        } else {
+            println("ERRO 3")
+            snackBar(inputLogin, R.string.usuario_invalido)
+        }
     }
 
     override fun onFailure(call: Call<Auth>, t: Throwable) {
-        snackBar(inputLogin)
+        snackBar(inputLogin, R.string.usuario_invalido)
     }
 }
