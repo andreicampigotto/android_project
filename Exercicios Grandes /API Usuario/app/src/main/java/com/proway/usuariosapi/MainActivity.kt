@@ -11,11 +11,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(), Callback<List<Product>>  {
+class MainActivity : AppCompatActivity(), Callback<List<Product>> {
 
     private lateinit var recyclerView: RecyclerView
     private val adapter = AdapterProducts()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
