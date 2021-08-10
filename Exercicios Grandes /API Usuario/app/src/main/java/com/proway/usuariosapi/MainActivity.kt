@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(), Callback<List<Product>>  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
     }
 
     override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {

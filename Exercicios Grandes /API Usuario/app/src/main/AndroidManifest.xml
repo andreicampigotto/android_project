@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UsuariosAPI">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActicity"
             android:exported="true">
             <intent-filter>
