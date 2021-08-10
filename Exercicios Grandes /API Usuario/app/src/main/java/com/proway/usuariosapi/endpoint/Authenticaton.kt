@@ -11,13 +11,7 @@ import retrofit2.http.Path
 
 interface Authenticaton {
 
-    @GET("/users/{userId}")
-    fun getUsers(@Path("id") userId: Int): Call<List<User>>
-
-    @GET("/users/")
-    fun getAllUser(): Call<List<User>>
-
     //Aqui é onde autentica
     @POST("/auth/login")
-    fun login(@Body credentials: com.proway.usuariosapi.model.Credentials): Call<Auth>
+    fun login(@Body credentials: Credentials): Call<Auth>
 }
