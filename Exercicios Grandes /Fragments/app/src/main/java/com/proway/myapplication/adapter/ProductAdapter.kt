@@ -10,12 +10,12 @@ import com.bumptech.glide.Glide
 import com.proway.myapplication.R
 import com.proway.myapplication.model.Product
 
-class ProductAdapter(val onClick:(Product)-> Unit):RecyclerView.Adapter<ProductViewHolder>() {
+class ProductAdapter():RecyclerView.Adapter<ProductViewHolder>() {
 
     private var listOfProducts = mutableListOf<Product>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        LayoutInflater.from(parent.context).inflate(R.layout.fragment_lista_produtos, parent, false).apply {
+        LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false).apply {
             return ProductViewHolder(this)
         }
     }
@@ -23,7 +23,6 @@ class ProductAdapter(val onClick:(Product)-> Unit):RecyclerView.Adapter<ProductV
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         listOfProducts[position].apply {
             holder.bind(this)
-            holder.itemView.setOnClickListener { onClick(this) }
         }
     }
 
@@ -34,7 +33,6 @@ class ProductAdapter(val onClick:(Product)-> Unit):RecyclerView.Adapter<ProductV
         listOfProducts.addAll(newList)
         notifyDataSetChanged()
     }
-
 }
 
 class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -9,4 +9,8 @@ object RetrofitBuilder {
         .baseUrl("https://fakestoreapi.com")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    fun getInstance(): ProductsService{
+        return retrofitFake.create(ProductsService::class.java)
+    }
 }
