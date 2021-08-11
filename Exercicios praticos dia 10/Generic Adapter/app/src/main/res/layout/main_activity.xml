@@ -33,8 +33,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="17dp"
+            android:layout_margin="16dp"
             android:layout_weight="1"
+            android:textSize="12sp"
             android:text="Carros"/>
 
         <Button
@@ -42,9 +43,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="17dp"
+            android:layout_margin="16dp"
             android:layout_weight="1"
+            android:textSize="12sp"
             android:text="Produtos"/>
+
+        <Button
+            android:id="@+id/buttonDialogFrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="Dialog"
+            android:textSize="12sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
