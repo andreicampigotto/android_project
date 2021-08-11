@@ -31,7 +31,18 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="17dp"
+            android:layout_weight="1"
+            android:text="Pessoas"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="17dp"
+            android:layout_weight="1"
+            android:text="Produtos"/>
 
     </LinearLayout>
 
