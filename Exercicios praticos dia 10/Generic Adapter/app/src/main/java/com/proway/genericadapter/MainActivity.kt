@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.proway.genericadapter.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
