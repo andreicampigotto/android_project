@@ -39,6 +39,10 @@ class GenericViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             is Car -> {
                 titleTextView.text = model.modelo
                 subTitleTextView.text = model.ano.toString()
+
+               val tipoCombustivel: TextView = itemView.findViewById(R.id.tipoCombustivel)
+
+                tipoCombustivel.text = model.combustivel
             }
         }
     }

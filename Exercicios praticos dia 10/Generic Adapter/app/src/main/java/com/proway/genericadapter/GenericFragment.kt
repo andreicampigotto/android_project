@@ -47,13 +47,13 @@ class GenericFragment : Fragment() {
             )
         } else if (parametroTipoLista == TipoLista.CARROS.id) {
             listOf = mutableListOf(
-                Car("Gol", 2020),
-                Car("Celta", 2020),
-                Car("Marajó", 2020),
-                Car("Opala", 2020),
-                Car("Monza", 2020),
-                Car("Onix", 2020),
-                Car("Fusca", 2020),
+                Car("Gol", 1994, "Etanol"),
+                Car("Celta", 2002, "Etanol"),
+                Car("Marajó", 1986, "Etanol"),
+                Car("Opala", 2020, "Gasolina"),
+                Car("Monza", 1990, "Etanol"),
+                Car("Onix", 2011, "Flex"),
+                Car("Fusca", 1976, "Gasolina"),
             )
         }
         recyclerView = view.findViewById(R.id.genericRecyclerView)
