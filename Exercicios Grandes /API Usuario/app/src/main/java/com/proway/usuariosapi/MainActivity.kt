@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.proway.usuariosapi.adapter.AdapterProducts
+import com.proway.usuariosapi.endpoint.RetrofitBuilder
 import com.proway.usuariosapi.model.Product
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,8 +30,12 @@ class MainActivity : AppCompatActivity(), Callback<List<Product>> {
         recyclerView.adapter = adapter
     }
 
-    private fun fetchProducts() {
+    private val productsCall by lazy {
+        RetrofitBuilder.getProductServices().getProducts()
+    }
 
+    private fun fetchProducts() {
+        productsCall.clone().enqueue(this)
     }
 
     override fun onResume() {
