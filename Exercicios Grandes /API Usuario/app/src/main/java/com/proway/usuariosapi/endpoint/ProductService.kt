@@ -1,9 +1,7 @@
 package com.proway.usuariosapi.endpoint
 
-import android.net.Credentials
 import com.proway.usuariosapi.model.Product
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Path
 
