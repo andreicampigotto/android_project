@@ -6,14 +6,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.proway.genericadapter.R
+import com.proway.genericadapter.TipoLista
 import com.proway.genericadapter.model.Car
 import com.proway.genericadapter.model.Product
 
-class GenericAdapter<T>(private val listOf: MutableList<T>) :
+class GenericAdapter<T>(private val listOf: MutableList<T>, private val type : TipoLista) :
     RecyclerView.Adapter<GenericViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenericViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false)
-        return GenericViewHolder(view)
+        val viewProduct = LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false)
+        val viewCar = LayoutInflater.from(parent.context).inflate(R.layout.item_car, parent, false)
+        val finalView = if (type == TipoLista.PRODUTOS) viewProduct else viewCar
+        return GenericViewHolder(finalView)
     }
 
     override fun onBindViewHolder(holder: GenericViewHolder, position: Int) {

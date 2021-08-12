@@ -58,7 +58,8 @@ class GenericFragment : Fragment() {
         }
         recyclerView = view.findViewById(R.id.genericRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = GenericAdapter(listOf)
+        recyclerView.adapter = GenericAdapter(listOf,
+            if (parametroTipoLista == TipoLista.PRODUTOS.id) TipoLista.PRODUTOS else TipoLista.CARROS )
     }
 
 
