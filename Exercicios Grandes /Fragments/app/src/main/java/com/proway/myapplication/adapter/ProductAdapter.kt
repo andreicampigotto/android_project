@@ -15,7 +15,8 @@ class ProductAdapter():RecyclerView.Adapter<ProductViewHolder>() {
     private var listOfProducts = mutableListOf<Product>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false).apply {
+        LayoutInflater.from(parent.context).inflate(
+            R.layout.item_product, parent, false).apply {
             return ProductViewHolder(this)
         }
     }
@@ -45,13 +46,11 @@ class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(product: Product) {
         titleTextView.text = product.title
         subtitleTextView.text = product.description
-
         priceTextView.text = "R$ ${product.price}"
 
         Glide.with(itemView.context)
             .load(product.image)
             .placeholder(R.drawable.ic_baseline_image_24)
             .into(productImageView)
-
     }
 }

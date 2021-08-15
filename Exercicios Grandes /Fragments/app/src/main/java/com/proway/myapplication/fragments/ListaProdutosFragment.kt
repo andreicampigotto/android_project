@@ -36,7 +36,6 @@ class ListaProdutosFragment : Fragment(), Callback<List<Product>> {
         recyclerView.adapter = adapter
 
         fetchProducts()
-
     }
 
     private val productsCall by lazy {
@@ -46,7 +45,6 @@ class ListaProdutosFragment : Fragment(), Callback<List<Product>> {
     override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
         response.body()?.apply {
             adapter.update(this)
-
         }
     }
 
