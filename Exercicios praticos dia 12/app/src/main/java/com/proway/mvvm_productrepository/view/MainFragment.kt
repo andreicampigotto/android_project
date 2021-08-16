@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.proway.mvvm_productrepository.R
 import com.proway.mvvm_productrepository.adapter.ProductAdapter
 import com.proway.mvvm_productrepository.model.Product
@@ -26,8 +27,12 @@ class MainFragment : Fragment(R.layout.main_fragment) {
 
     }
 
-    private val productObserver = Observer<List<Product>> { newList ->
+    private val productsObserver = Observer<List<Product>> { newList ->
         adapter.update(newList)
+    }
+
+    private val errorObserver = Observer<String> { error ->
+        Snackbar.make(requireView(), error, Snackbar.LENGTH_LONG).show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,8 +42,10 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         productsRecyclerView.adapter = adapter
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel.products.observe(viewLifecycleOwner, productObserver)
+
+        viewModel.products.observe(viewLifecycleOwner, productsObserver)
+        viewModel.error.observe(viewLifecycleOwner, errorObserver)
+
         viewModel.fetchProdutos()
     }
-
 }
