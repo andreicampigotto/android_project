@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseUser
 import com.proway.mvvm_auth.MainActivity
 import com.proway.mvvm_auth.R
+import com.proway.mvvm_auth.utils.replaceView
 import com.proway.mvvm_auth.view_model.SignInViewModel
 
 class SignInFragment : Fragment(R.layout.sign_in_fragment) {
@@ -23,7 +23,7 @@ class SignInFragment : Fragment(R.layout.sign_in_fragment) {
     private lateinit var viewModel: SignInViewModel
 
     private val observerUser = Observer<FirebaseUser> {
-        (requireActivity() as? MainActivity)?.replaceView(ContentFragment.newInstance())
+        requireActivity().replaceView(ContentFragment.newInstance())
     }
 
     private val observerError = Observer<String> {
@@ -37,6 +37,7 @@ class SignInFragment : Fragment(R.layout.sign_in_fragment) {
         viewModel.error.observe(viewLifecycleOwner, observerError)
         viewModel.user.observe(viewLifecycleOwner, observerUser)
 
+
         view.findViewById<Button>(R.id.loginButton).setOnClickListener {
             val inputEmail = view.findViewById<EditText>(R.id.inputEmailEditText)
             val inputPassword = view.findViewById<EditText>(R.id.inputPasswordEditText)
@@ -48,8 +49,8 @@ class SignInFragment : Fragment(R.layout.sign_in_fragment) {
             }
         }
 
-        view.findViewById<TextView>(R.id.newAccountTextView).setOnClickListener {
-            (requireActivity() as? MainActivity)?.replaceView(MainFragment.newInstance())
+        view.findViewById<View>(R.id.newAccountTextView).setOnClickListener {
+            (requireActivity() as? MainActivity)?.replaceView(SignUpFragment.newInstance())
         }
     }
 }

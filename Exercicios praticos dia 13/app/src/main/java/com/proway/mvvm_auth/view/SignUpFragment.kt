@@ -12,12 +12,13 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseUser
 import com.proway.mvvm_auth.MainActivity
 import com.proway.mvvm_auth.R
+import com.proway.mvvm_auth.utils.replaceView
 import com.proway.mvvm_auth.view_model.MainViewModel
 
-class MainFragment : Fragment(R.layout.main_fragment) {
+class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = SignUpFragment()
     }
 
     private lateinit var viewModel: MainViewModel
@@ -29,14 +30,8 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        /**
-         * Add observers
-         */
         viewModel.user.observe(viewLifecycleOwner, observerNewUser)
 
-        /**
-         * Add eventos nos componentes da tela
-         */
         view.findViewById<Button>(R.id.saveButton).setOnClickListener {
             val inputEmail = view.findViewById<EditText>(R.id.inputEmailEditText)
             val inputPassword = view.findViewById<EditText>(R.id.inputPasswordEditText)
@@ -49,7 +44,7 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         }
 
         view.findViewById<View>(R.id.backButton).setOnClickListener {
-            (requireActivity() as? MainActivity)?.replaceView(SignInFragment.newInstance())
+            requireActivity().replaceView(SignInFragment.newInstance(), R.id.action_bar)
         }
     }
 }

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="18sp"
         android:gravity="center"
-        android:text="Authentication"
+        android:text="Autenticar"
         android:textSize="32sp" />
 
     <EditText
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Create new account"
+            android:text="cirar uma nova conta aqui"
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="parent" />
 

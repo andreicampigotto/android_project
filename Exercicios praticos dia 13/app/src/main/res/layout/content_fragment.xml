@@ -7,9 +7,9 @@
     android:background="@color/purple_200"
     tools:context=".view.ContentFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contasRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:text="Estamos logados!!!!!" />
+        android:layout_height="match_parent" />
+
 </FrameLayout>

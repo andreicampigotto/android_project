@@ -7,19 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".view.MainFragment">
+    tools:context=".view.SignUpFragment">
+
 
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18sp"
         android:gravity="center"
-        android:text="New user"
+        android:text="New User"
         android:textSize="32sp" />
 
     <EditText
@@ -37,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Create user" />
+        android:text="@string/criar_user" />
+
 
 </LinearLayout>

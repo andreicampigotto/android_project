@@ -7,7 +7,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.proway.mvvm_auth.repository.AuthenticationRepository
 
 class MainViewModel : ViewModel() {
-
     private val _user = MutableLiveData<FirebaseUser?>()
     var user: LiveData<FirebaseUser?> = _user
 
