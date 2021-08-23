@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Firebase Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="signIn">SignIn</string>
+    <string name="cirar_uma_nova_conta_aqui">crie uma nova conta aqui</string>
+
+</resources>

@@ -8,6 +8,16 @@ data class Conta(
     val price: Double?
 ) {
 
+
+    fun validaConta(): Boolean{
+        if (price  == null)
+            return false
+        else if (price  < 0)
+            return false
+        else
+           return true
+    }
+
     companion object {
 
         fun fromData(snapshot: QueryDocumentSnapshot): Conta {
