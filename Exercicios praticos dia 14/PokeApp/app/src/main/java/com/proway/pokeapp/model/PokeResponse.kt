@@ -1,6 +1,7 @@
 package com.proway.pokeapp.model
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -18,11 +19,14 @@ data class Pokemon(
 
     @ColumnInfo(name = "poke_url")
     @SerializedName("url")
-    val url: String
+    val url: String,
+
+    @Embedded
+    var details: PokeDetails?
 
 ){
-    fun extractIdFromUrl():String{
+    fun extractIdFromUrl(withPads: Boolean = false):String{
         val listStr = url.split("/")
-        return listStr[6]
+        return if (withPads) listStr[6].padStart(3,'0') else listStr[6]
     }
 }

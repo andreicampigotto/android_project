@@ -15,15 +15,27 @@ class MainViewModel : ViewModel() {
     val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-    fun fetchAllFromServer(context: Context) {
+    private fun fetchAllFromServer(context: Context) {
         val repository = PokemonRepository(context)
+
         repository.fetchAll { response, error ->
             response?.let {
                 _pokemons.value = it.results
-                repository.insertIntoDatabase(it.results)
+                loadPokemonDetails(it.results, repository)
             }
             error?.let {
                 _error.value = it
+            }
+        }
+    }
+
+    private fun loadPokemonDetails(pokemons: List<Pokemon>, repository: PokemonRepository) {
+        pokemons.forEach { poke ->
+            repository.fetchPokemonDetails(pokeId = poke.extractIdFromUrl()) { details, _ ->
+                details?.let {
+                    poke.details = details
+                    repository.insertIntoDatabase(poke)
+                }
             }
         }
     }
