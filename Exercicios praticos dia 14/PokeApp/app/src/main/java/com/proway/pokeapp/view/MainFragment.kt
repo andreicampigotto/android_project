@@ -2,12 +2,11 @@ package com.proway.pokeapp.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.proway.pokeapp.R
 import com.proway.pokeapp.adapter.PokemonAdapter
@@ -39,5 +38,25 @@ class MainFragment : Fragment(R.layout.main_fragment) {
 
         viewModel.pokemons.observe(viewLifecycleOwner, observerPokemons)
         viewModel.fetchAllFromDatabase(requireContext())
+
+        binding.textFildSearch.editText?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                println("")
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                p0?.let{
+                    if (it.length > 2)
+                        viewModel.fetchFilteredFromDatabase(requireContext(), it.toString())
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                p0?.let {
+                    if (it.isEmpty())
+                        viewModel.fetchAllFromDatabase(requireContext())
+                }
+            }
+        })
     }
 }

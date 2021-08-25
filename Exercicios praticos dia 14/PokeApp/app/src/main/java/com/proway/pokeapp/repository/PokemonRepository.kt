@@ -70,7 +70,7 @@ class PokemonRepository(private val context: Context) {
 
     fun fetchAllFromDatabaseWithFilter(query: String): List<Pokemon>?{
         val dao = database.pokemonDAO()
-        return dao.fetchFiltered(query)
+        return dao.fetchFiltered(query.lowercase())
     }
 }
 
