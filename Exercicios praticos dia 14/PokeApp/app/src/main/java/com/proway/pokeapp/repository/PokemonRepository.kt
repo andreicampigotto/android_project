@@ -68,5 +68,9 @@ class PokemonRepository(private val context: Context) {
         return dao.all()
     }
 
+    fun fetchAllFromDatabaseWithFilter(query: String): List<Pokemon>?{
+        val dao = database.pokemonDAO()
+        return dao.fetchFiltered(query)
+    }
 }
 
