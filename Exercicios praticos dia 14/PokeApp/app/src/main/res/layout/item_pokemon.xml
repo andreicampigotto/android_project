@@ -40,6 +40,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:textSize="17sp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="#001" />
@@ -55,6 +56,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/textViewIdPokemon"
                     tools:text="Pokemon Name" />
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/img_pattern"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -68,6 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img_pokeball"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -76,8 +88,8 @@
         android:layout_height="130dp"
         android:layout_gravity="end|bottom"
         android:src="@mipmap/ic_launcher"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageViewPokeball"
         app:layout_constraintTop_toTopOf="@+id/imageViewPokeball"

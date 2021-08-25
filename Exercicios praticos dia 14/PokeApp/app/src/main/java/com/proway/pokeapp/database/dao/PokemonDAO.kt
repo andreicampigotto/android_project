@@ -2,6 +2,7 @@ package com.proway.pokeapp.database.dao
 
 import androidx.room.*
 import com.proway.pokeapp.model.Pokemon
+import com.proway.pokeapp.model.Types
 
 @Dao
 interface PokemonDAO {
@@ -12,6 +13,9 @@ interface PokemonDAO {
     @Query("SELECT * FROM Pokemon WHERE poke_name = :idPoke")
     fun getById(idPoke: String): Pokemon?
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(pokemon: Pokemon)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertType(types: List<Types>)
 }

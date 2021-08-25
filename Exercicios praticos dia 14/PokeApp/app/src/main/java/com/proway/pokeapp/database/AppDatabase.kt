@@ -1,15 +1,14 @@
 package com.proway.pokeapp.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import com.proway.pokeapp.database.dao.PokemonDAO
 import com.proway.pokeapp.model.*
 
 @Database(
-    entities = [Pokemon::class, PokeDetails::class, Sprites::class, Other::class, ArtWork::class],
+    entities = [Pokemon::class, PokeDetails::class, Sprites::class, Other::class, ArtWork::class, Types::class, PokemonType::class],
     version = 1)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun pokemonDAO(): PokemonDAO

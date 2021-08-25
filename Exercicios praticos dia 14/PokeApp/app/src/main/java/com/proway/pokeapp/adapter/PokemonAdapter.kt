@@ -45,6 +45,9 @@ class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             Glide.with(itemView.context)
                 .load(it.sprites?.other?.artWork?.image)
                 .into(binding.imageViewPokemon)
+
+            val pokeTypeSetup = it.type[0].type.extractBgColor()
+            binding.cardView.setCardBackgroundColor(itemView.context.getColor(pokeTypeSetup))
         }
     }
 }

@@ -1,9 +1,6 @@
 package com.proway.pokeapp.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
 data class PokeResponse(
@@ -22,7 +19,7 @@ data class Pokemon(
     val url: String,
 
     @Embedded
-    var details: PokeDetails?
+    var details: PokeDetails
 
 ){
     fun extractIdFromUrl(withPads: Boolean = false):String{
