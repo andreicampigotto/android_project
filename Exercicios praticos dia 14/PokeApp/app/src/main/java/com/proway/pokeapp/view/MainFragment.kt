@@ -58,5 +58,12 @@ class MainFragment : Fragment(R.layout.main_fragment) {
                 }
             }
         })
+
+        binding.filterButton.setOnClickListener{showBottomSheetDialog()}
+    }
+
+    fun showBottomSheetDialog(){
+        val bottomSheet = FilterFragment.newInstance()
+        bottomSheet.show(parentFragmentManager, "dialog_filters")
     }
 }

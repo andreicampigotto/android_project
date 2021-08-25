@@ -42,7 +42,7 @@ class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private var binding: ItemPokemonBinding = ItemPokemonBinding.bind(itemView)
 
-    @SuppressLint("ResourceType")
+    @SuppressLint("ResourceType", "UseCompatLoadingForDrawables")
     fun bind(pokemon: Pokemon) {
         binding.textViewIdPokemon.text = "#${pokemon.extractIdFromUrl()}"
         binding.textViewPokemonName.text = pokemon.name

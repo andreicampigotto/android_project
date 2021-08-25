@@ -22,9 +22,9 @@
         <entry key="app/src/main/res/drawable/img_pokeball.xml" value="0.335" />
         <entry key="app/src/main/res/layout/bottom_sheet.xml" value="0.32794604743183414" />
         <entry key="app/src/main/res/layout/buttons_card.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/item_pokemon.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/item_pokemon.xml" value="0.375" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.196875" />
-        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.2624753952440814" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.45" />
       </map>
     </option>
   </component>
