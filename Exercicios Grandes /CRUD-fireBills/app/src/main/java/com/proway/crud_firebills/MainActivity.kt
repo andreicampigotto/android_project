@@ -2,7 +2,7 @@ package com.proway.crud_firebills
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.proway.crud_firebills.ui.main.MainFragment
+import com.proway.crud_firebills.view.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836316910797",
+    "project_id": "crud-firebills",
+    "storage_bucket": "crud-firebills.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836316910797:android:8ee4949df6eec90eaf0584",
+        "android_client_info": {
+          "package_name": "com.proway.crud_firebills"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836316910797-9koar0dnj1urk3ni1fc09hgdbe4o8ghs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjQAox22KSitwn69dJ0dVTIPunpvpzywM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836316910797-9koar0dnj1urk3ni1fc09hgdbe4o8ghs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

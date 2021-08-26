@@ -1,4 +1,4 @@
-package com.proway.crud_firebills.ui.main
+package com.proway.crud_firebills.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.proway.crud_firebills.R
+import com.proway.crud_firebills.viewModel.MainViewModel
 
 class MainFragment : Fragment() {
 

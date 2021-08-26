@@ -1,4 +1,4 @@
-package com.proway.crud_firebills.ui.main
+package com.proway.crud_firebills.viewModel
 
 import androidx.lifecycle.ViewModel
 
