@@ -1,9 +1,6 @@
 package com.proway.crud_firebills.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Transaction
+import androidx.room.*
 import com.proway.crud_firebills.model.Category
 import com.proway.crud_firebills.model.Product
 import com.proway.crud_firebills.model.ProductCategory
@@ -14,6 +11,12 @@ interface ProductDao {
     @Transaction
     @Query("SELECT * FROM Product")
     fun getProducts(): List<ProductCategory>
+
+    @Query("SELECT * FROM Product WHERE prod_id = :id")
+    fun getProduct(id: Long): Product
+
+    @Delete
+    fun delete(product: Product)
 
     @Insert
     fun insert(product: Product)
