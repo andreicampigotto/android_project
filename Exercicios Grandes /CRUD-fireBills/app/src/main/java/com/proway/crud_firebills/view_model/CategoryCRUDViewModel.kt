@@ -7,8 +7,9 @@ import androidx.lifecycle.ViewModel
 import com.proway.crud_firebills.database.AppDatabase
 import com.proway.crud_firebills.database.dao.CategoryDao
 import com.proway.crud_firebills.model.Category
+import com.proway.crud_firebills.repository.CategoryRepository
 
-class MainViewModel : ViewModel() {
+class CategoryCRUDViewModel : ViewModel() {
 
     private val _categories= MutableLiveData<List<Category>>()
     val categories: LiveData<List<Category>> = _categories
