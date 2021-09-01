@@ -6,13 +6,15 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.proway.injecao_depencia_com_api.R
 import com.proway.injecao_depencia_com_api.adapater.UserAdapter
-import com.proway.injecao_depencia_com_api.databinding.ItemUserBinding
 import com.proway.injecao_depencia_com_api.databinding.MainFragmentBinding
 import com.proway.injecao_depencia_com_api.model.User
 import com.proway.injecao_depencia_com_api.view_model.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainFragment : Fragment() {
+@AndroidEntryPoint
+class MainFragment : Fragment(R.layout.main_fragment) {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -32,7 +34,7 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.userRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-
+        binding.userRecyclerView.adapter = adapter
 
         viewModel.user.observe(viewLifecycleOwner, observerRepository)
         viewModel.getUserList()
