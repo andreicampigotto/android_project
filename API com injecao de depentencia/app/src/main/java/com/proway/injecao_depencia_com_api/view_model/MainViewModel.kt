@@ -19,7 +19,7 @@ class MainViewModel @Inject constructor(
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-    fun gerUserList() {
+    fun getUserList() {
         gitUserRepository.getUsersList { list, error ->
             list.apply {
                 _user.value = this
