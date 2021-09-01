@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.proway.injecao_depencia_com_api.adapater.UserAdapter
+import com.proway.injecao_depencia_com_api.databinding.ItemUserBinding
 import com.proway.injecao_depencia_com_api.databinding.MainFragmentBinding
 import com.proway.injecao_depencia_com_api.model.User
 import com.proway.injecao_depencia_com_api.view_model.MainViewModel
@@ -28,6 +30,9 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding= MainFragmentBinding.bind(view)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        binding.userRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
 
         viewModel.user.observe(viewLifecycleOwner, observerRepository)
         viewModel.getUserList()
