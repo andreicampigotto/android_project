@@ -11,17 +11,17 @@ class GitUserRepository {
 
     fun getUsersList(onComplete: (List<User>?, String?) -> Unit) {
         val call = serviceRepository.getUser()
-        call.enqueue(object : Callback<User> {
+        call.enqueue(object : Callback<List<User>> {
             override fun onResponse(
-                call: Call<User>,
-                response: Response<User>
+                call: Call<List<User>>,
+                response: Response<List<User>>
             ) {
                 if (response.body() != null)
-//                    onComplete(response.body(), null)
+                  onComplete(response.body(), null)
                 else
                     onComplete(null, "Error")
             }
-            override fun onFailure(call: Call<User>, t: Throwable) {
+            override fun onFailure(call: Call<List<User>>, t: Throwable) {
                 onComplete(null, t.localizedMessage)
             }
         })
