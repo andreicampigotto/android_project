@@ -1,4 +1,4 @@
-package com.proway.curl_routines.ui.main
+package com.proway.curl_routines.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.proway.curl_routines.R
 import com.proway.curl_routines.databinding.MainFragmentBinding
+import com.proway.curl_routines.view_model.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

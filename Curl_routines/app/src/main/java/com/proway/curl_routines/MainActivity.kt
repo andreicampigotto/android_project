@@ -3,7 +3,7 @@ package com.proway.curl_routines
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.proway.curl_routines.databinding.MainActivityBinding
-import com.proway.curl_routines.ui.main.MainFragment
+import com.proway.curl_routines.view.MainFragment
 
 
 class MainActivity : AppCompatActivity(R.layout.main_activity) {
