@@ -47,10 +47,11 @@ class FeedFragment(private val feedType: FeedType) : Fragment(R.layout.feed_frag
         viewModel.images.observe(viewLifecycleOwner, observerImages)
         viewModel.videos.observe(viewLifecycleOwner, observerVideos)
 
-        adapters = if (feedType == FeedType.VIDEO) ConcatAdapter(adapterVideo) else ConcatAdapter(
+        adapters = ConcatAdapter(
             adapterHeader,
-            adapterImage
+            if (feedType == FeedType.VIDEO) adapterVideo else adapterImage,
         )
+
         setupRecyclerView()
     }
 
