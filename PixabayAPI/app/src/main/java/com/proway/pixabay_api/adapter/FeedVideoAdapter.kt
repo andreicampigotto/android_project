@@ -11,18 +11,34 @@ import com.proway.pixabay_api.R
 import com.proway.pixabay_api.databinding.FeedVideoItemBinding
 import com.proway.pixabay_api.model.VideoConfig
 
-class FeedVideoAdapter: ListAdapter<VideoConfig, FeedVideoViewHolder>(VideosDiffCallback()) {
+private const val NORMAL_VIEW = 0
+private const val ADS_VIEW = 1
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedVideoViewHolder {
+class FeedVideoAdapter : ListAdapter<VideoConfig, RecyclerView.ViewHolder>(VideosDiffCallback()) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder{
+        if (viewType == ADS_VIEW)
+            LayoutInflater.from(parent.context).inflate(R.layout.ads_item, parent, false).apply {
+                return AdsViewHolder(this)
+            }
         LayoutInflater.from(parent.context).inflate(R.layout.feed_video_item, parent, false).apply {
             return FeedVideoViewHolder(this)
         }
     }
 
-    override fun onBindViewHolder(holder: FeedVideoViewHolder, position: Int) {
-        getItem(position).let{ video ->
-            holder.bind(video)
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (getItemViewType(position) == NORMAL_VIEW) {
+            holder as FeedVideoViewHolder
+            getItem(position).let { video ->
+                holder.bind(video)
+            }
         }
+        else
+            holder as AdsViewHolder
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position % 3 == 0 && position != 0) ADS_VIEW else NORMAL_VIEW
     }
 }
 

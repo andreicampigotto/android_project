@@ -63,7 +63,6 @@ class FeedFragment(private val feedType: FeedType) : Fragment(R.layout.feed_frag
                 hideSoftInput()
             }
         })
-
         if (feedType == FeedType.VIDEO) viewModel.fetchVideo() else viewModel.fetchImages()
     }
 }
