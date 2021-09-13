@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.buttonVideos -> replaceFrag(FeedType.VIDEO)
             }
         }
-
         replaceFrag(FeedType.IMAGE)
     }
 
