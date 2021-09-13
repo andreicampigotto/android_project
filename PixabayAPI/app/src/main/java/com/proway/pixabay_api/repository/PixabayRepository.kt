@@ -18,11 +18,11 @@ class PixabayRepository @Inject constructor(private val service: PixabayApi) {
         }
     }
 
-    suspend fun fetchVideos(q: String):List<VideoConfig>?{
-        return withContext(Dispatchers.Default){
-            val response = service.fetchVideos(q = q )
-            val processResponse = processData(response)
-            processResponse?.hits
+    suspend fun fetchVideos(q: String): List<VideoConfig>? {
+        return withContext(Dispatchers.Default) {
+            val response = service.fetchVideos(q = q)
+            val processedResponse = processData(response)
+            processedResponse?.hits
         }
     }
 

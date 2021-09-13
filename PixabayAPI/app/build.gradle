@@ -15,7 +15,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField "String", "API_KEY", "\"18922691-d1e8d0c37a030e91c2c254702\""
     }
 
@@ -65,6 +64,13 @@ dependencies {
 
 // Image on a Circle
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //oquefazem?
+    //suporte para celulares antigos
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //recyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

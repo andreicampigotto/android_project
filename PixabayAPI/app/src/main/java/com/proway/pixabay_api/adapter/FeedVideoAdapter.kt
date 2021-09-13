@@ -1,17 +1,22 @@
 package com.proway.pixabay_api.adapter
 
 import android.net.Uri
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.proway.pixabay_api.R
 import com.proway.pixabay_api.databinding.FeedVideoItemBinding
 import com.proway.pixabay_api.model.VideoConfig
 
 class FeedVideoAdapter: ListAdapter<VideoConfig, FeedVideoViewHolder>(VideosDiffCallback()) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedVideoViewHolder {
-        TODO("Not yet implemented")
+        LayoutInflater.from(parent.context).inflate(R.layout.feed_video_item, parent, false).apply {
+            return FeedVideoViewHolder(this)
+        }
     }
 
     override fun onBindViewHolder(holder: FeedVideoViewHolder, position: Int) {
